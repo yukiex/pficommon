@@ -253,7 +253,7 @@ ustring hankaku_to_zenkaku(const ustring& ustr){
 	res.push_back(hankaku_zenkaku_tbl[ustr[i]-0xff60]);
       }
     } else if (ustr[i]==UTF_HANKAKU_BAR) { // -
-      if (c!=0xFFFFFFFFU&&!is_basic_latin(c)) {
+      if (c!=0xFFFFFFFFU&&is_hankaku(c)) {
 	res.push_back(UTF_ZENKAKU_BAR);
       } else {
 	res.push_back(ustr[i]);
